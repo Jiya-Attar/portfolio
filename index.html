@@ -277,7 +277,7 @@
   </div>
 
   <div class="ticker">
-    <div class="ticker-item"><div class="ticker-num">1.2M+</div><div class="ticker-label">Records Analyzed</div></div>
+    <div class="ticker-item"><div class="ticker-num">1.5M+</div><div class="ticker-label">Records Analyzed</div></div>
     <div class="ticker-item"><div class="ticker-num">₹1.2M+</div><div class="ticker-label">Business Impact Quantified</div></div>
     <div class="ticker-item"><div class="ticker-num">3</div><div class="ticker-label">Core Tools — Python / SQL / Power BI</div></div>
   </div>
@@ -319,15 +319,17 @@
     </div>
 
     <div class="skill-card">
-      <div class="skill-card-head"><div class="skill-card-title">Python Libraries</div><div class="skill-card-count">5</div></div>
+      <div class="skill-card-head"><div class="skill-card-title">Python Libraries</div><div class="skill-card-count">7</div></div>
       <div class="skill-pills">
         <span class="skill-pill">Pandas</span>
         <span class="skill-pill">NumPy</span>
         <span class="skill-pill">Matplotlib</span>
         <span class="skill-pill">Seaborn</span>
         <span class="skill-pill">Scikit-learn</span>
+        <span class="skill-pill">XGBoost</span>
+        <span class="skill-pill">imbalanced-learn (SMOTE)</span>
       </div>
-      <div class="skill-card-note">Scikit-learn used for demand forecasting (regression modeling).</div>
+      <div class="skill-card-note">XGBoost &amp; SMOTE used in fraud detection; Scikit-learn across regression &amp; anomaly-detection work.</div>
     </div>
 
     <div class="skill-card">
@@ -487,6 +489,34 @@
       </ul>
       <div class="project-tools">
         <span class="tool-tag">Python</span><span class="tool-tag">SQL</span><span class="tool-tag">Excel</span><span class="tool-tag">Power BI</span>
+      </div>
+    </div>
+  </article>
+
+  <!-- Project 5 -->
+  <article class="project">
+    <div class="project-head">
+      <div>
+        <div class="project-id">Report 05 — Financial Services / Fraud Detection</div>
+        <div class="project-title">FraudLens — Real-Time Credit Card Fraud Detection Dashboard</div>
+      </div>
+      <a class="project-link" href="https://github.com/Jiya-Attar/FraudLens-Real-Time-Credit-Card-Fraud-Detection-Dashboard" target="_blank" rel="noopener">View on GitHub ↗</a>
+    </div>
+    <div class="project-kpis">
+      <div class="kpi"><div class="kpi-num pos">85.71%</div><div class="kpi-label">Fraud Catch Rate (Recall)</div></div>
+      <div class="kpi"><div class="kpi-num pos">$8.71K</div><div class="kpi-label">Fraud $ Prevented</div></div>
+      <div class="kpi"><div class="kpi-num neu">76.02%</div><div class="kpi-label">F1 Score</div></div>
+      <div class="kpi"><div class="kpi-num pos">0.07%</div><div class="kpi-label">False Positive Rate</div></div>
+    </div>
+    <div class="project-body">
+      <ul>
+        <li>Built an end-to-end fraud detection pipeline on ~285K highly imbalanced credit card transactions (~0.17% fraud rate), comparing a supervised XGBoost classifier (trained with SMOTE) against an unsupervised Isolation Forest trained with no fraud labels at all.</li>
+        <li>Pushed all business logic — confusion matrix, risk banding, cumulative fraud-dollars-caught — into 10 hand-written SQL views in SQLite, so every number on the dashboard traces back to a query, not a BI-tool measure.</li>
+        <li>Added a local, open-weight LLM (flan-t5-base, zero API cost) to rewrite templated fraud facts into plain-English analyst explanations, with a fallback to the guaranteed-correct template if the rewrite ever dropped a figure.</li>
+        <li>Shipped a single-page Power BI command center — KPI strip, live risk feed, hourly fraud pattern, model comparison, and AI-generated explanations — evaluated on Precision-Recall AUC rather than accuracy, since a model that flags nothing would still be 99.83% "accurate."</li>
+      </ul>
+      <div class="project-tools">
+        <span class="tool-tag">Python</span><span class="tool-tag">XGBoost</span><span class="tool-tag">Isolation Forest</span><span class="tool-tag">SMOTE</span><span class="tool-tag">SQLite</span><span class="tool-tag">Power BI</span><span class="tool-tag">Local LLM</span>
       </div>
     </div>
   </article>
